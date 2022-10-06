@@ -9,6 +9,7 @@ import re
 from os import path
 from codecs import open  # To use a consistent encoding
 from setuptools import setup  # Always prefer setuptools over distutils
+from sshtunnel import __version__ as version
 
 here = path.abspath(path.dirname(__file__))
 name = 'sshtunnel'
@@ -23,10 +24,6 @@ with open(path.join(here, 'docs.rst'), encoding='utf-8') as f:
     documentation = f.read()
 with open(path.join(here, 'changelog.rst'), encoding='utf-8') as f:
     changelog = f.read()
-
-with open(path.join(here, name + '.py'), encoding='utf-8') as f:
-    data = f.read()
-    version = eval(re.search("__version__[ ]*=[ ]*([^\r\n]+)", data).group(1))
 
 
 setup(
@@ -87,10 +84,11 @@ setup(
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().
     # packages=find_packages(exclude=['contrib', 'docs', 'tests']),
+    packages=['sshtunnel'],
 
     # Alternatively, if you want to distribute just a my_module.py, uncomment
     # this:
-    py_modules=["sshtunnel"],
+    # py_modules=["sshtunnel"],
 
     # List run-time dependencies here.  These will be installed by pip when
     # your project is installed. For an analysis of "install_requires" vs pip's

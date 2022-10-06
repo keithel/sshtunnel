@@ -36,10 +36,6 @@ else:  # pragma: no cover
     input_ = input
 
 
-__version__ = '0.4.0'
-__author__ = 'pahaz'
-
-
 #: Timeout (seconds) for transport socket (``socket.settimeout``)
 SSH_TIMEOUT = 0.1  # ``None`` may cause a block of transport thread
 #: Timeout (seconds) for tunnel connection (open_channel timeout)
